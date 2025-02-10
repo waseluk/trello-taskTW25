@@ -1,13 +1,12 @@
+import Board from "./components/Board/Board";
 import "./App.css";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
-      <div></div>
-      <h1>Trello Task TW'25</h1>
-      <div className="card">
-        <p>Board here...</p>
-      </div>
+      <Header />
+      <Board />
     </>
   );
 }

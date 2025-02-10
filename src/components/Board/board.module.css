@@ -1,0 +1,17 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 4rem;
+  border: 8px solid;
+  border-color: azure;
+  background-size: 900px;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .board {
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
