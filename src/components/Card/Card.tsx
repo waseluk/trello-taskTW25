@@ -1,3 +1,5 @@
+import styles from "./card.module.css";
+
 type CardProps = {
   id: number;
   title: string;
@@ -6,7 +8,7 @@ type CardProps = {
 
 export default function Card({ id, title, body }: CardProps) {
   return (
-    <div>
+    <div className={styles.card}>
       <h1>
         {id}: {title}
       </h1>
