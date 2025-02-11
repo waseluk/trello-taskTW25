@@ -5,7 +5,7 @@ const Header = () => {
       <div className={styles.logo}>
         <img src={"/TrelloLogo.png"} alt="TrelloLogo" />
         <div className={styles.title}>
-          <h1> Welcome to Tom's Trello Clone</h1>
+          <h1> Welcome to Tom's Trello Clone V2</h1>
         </div>
       </div>
     </header>

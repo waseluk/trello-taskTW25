@@ -4,7 +4,9 @@ import styles from "./board.module.css";
 const Board = () => {
   return (
     <div className={styles.board}>
-      <Column />
+      <Column columnTitle="Waiting" columnId={1} />
+      <Column columnTitle="In Progress" columnId={2} />
+      <Column columnTitle="Completed" columnId={3} />
     </div>
   );
 };
