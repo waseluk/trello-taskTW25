@@ -1,7 +1,8 @@
 import styles from "./column.module.css";
 import Card from "../Card/Card";
 
-const Column = ({ columnTitle, tasks }) => {
+const Column = ({ columnId, columnTitle, tasks, editTask, deleteTask }) => {
+  console.log("Column render, tasks:", tasks);
   return (
     <div className={styles.column}>
       <h1>{columnTitle}</h1>
@@ -12,7 +13,8 @@ const Column = ({ columnTitle, tasks }) => {
             id={task.id}
             title={task.title}
             body={task.body}
-            columnId={task.column}
+            editTask={editTask}
+            deleteTask={deleteTask}
           />
         ))}
       </div>

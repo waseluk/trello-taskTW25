@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./card.module.css";
 
 export default function Card({ id, title, body, editTask, deleteTask }) {
-  const [task, setTask] = useState("");
+  const [task, setTask] = useState(body);
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEdit = () => {
