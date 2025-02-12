@@ -13,6 +13,7 @@ const Column = ({ columnId, columnTitle, tasks, editTask, deleteTask }) => {
             id={task.id}
             title={task.title}
             body={task.body}
+            columnId={task.columnId}
             editTask={editTask}
             deleteTask={deleteTask}
           />

@@ -28,7 +28,7 @@ function reducer(taskState, action) {
         return {
           ...taskState,
           tasks: taskState.tasks.map((task) =>
-            task.id === action.editTask.id ? action.editTask : task
+            task.id === action.editTask.id ? { ...task, ...action.editTask } : task
           ),
         };
   

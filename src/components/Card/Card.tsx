@@ -1,7 +1,14 @@
 import { useState } from "react";
 import styles from "./card.module.css";
 
-export default function Card({ id, title, body, editTask, deleteTask }) {
+export default function Card({
+  id,
+  columnId,
+  title,
+  body,
+  editTask,
+  deleteTask,
+}) {
   const [task, setTask] = useState(body);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -10,7 +17,7 @@ export default function Card({ id, title, body, editTask, deleteTask }) {
   };
 
   const handleSave = () => {
-    const updatedTask = { id, title, body: task };
+    const updatedTask = { id, title, body: task, columnId };
     editTask(updatedTask);
     setIsEditing(false);
   };
