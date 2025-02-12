@@ -1,18 +1,39 @@
+import { useState } from "react";
 import styles from "./card.module.css";
 
-type CardProps = {
-  id: number;
-  title: string;
-  body: string;
-};
+export default function Card({ id, title, body, editTask, deleteTask }) {
+  const [task, setTask] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
 
-export default function Card({ id, title, body }: CardProps) {
+  const handleEdit = () => {
+    setIsEditing((prev) => !prev);
+  };
+
+  const handleSave = () => {
+    const updatedTask = { id, title, body: task };
+    editTask(updatedTask);
+    setIsEditing(false);
+  };
+
+  const handleDelete = () => {
+    deleteTask(id);
+  };
+
   return (
     <div className={styles.card}>
-      <h1>
-        {id}: {title}
-      </h1>
-      <p>{body}</p>
+      <h1>{title}</h1>
+      {!isEditing ? (
+        <p>{body}</p>
+      ) : (
+        <input
+          type="text"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+        />
+      )}
+      <button onClick={handleEdit}>{isEditing ? "Cancel" : "Edit"}</button>
+      {isEditing && <button onClick={handleSave}>Save</button>}
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 }
