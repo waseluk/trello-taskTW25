@@ -1,15 +1,10 @@
-import { useReducer } from "react";
+/* import { useReducer } from "react";
 //usereducer
 const initialState = {
   //local storage
   tasks: [],
 };
 
-const Action = {
-  ADD_TASK: "AddTask",
-  REMOVE_TASK: "RemoveTask",
-  EDIT_TASK: "EditTask",
-};
 
 const taskReducer = (state, action) => {
   switch (action.type) {
@@ -61,4 +56,4 @@ const useTasks = () => {
   };
 };
 
-export default useTasks;
+export default useTasks; */

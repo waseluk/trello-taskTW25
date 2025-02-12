@@ -47,6 +47,7 @@ const Board = () => {
           tasks={getTasksForColumn(column.columnId)}
           editTask={handleEditTask}
           deleteTask={handleRemoveTask}
+          columns={columns}
         />
       ))}
     </div>
