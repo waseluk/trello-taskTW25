@@ -1,6 +1,10 @@
 import useColumnForm from "../../hooks/useColumnForm";
+import { NewColumnFormProps } from "../../types/types";
 
-const NewColumnForm = ({ addNewColumn, existingColumns }) => {
+const NewColumnForm = ({
+  addNewColumn,
+  existingColumns,
+}: NewColumnFormProps) => {
   const { column, handleChange, handleSubmit } = useColumnForm({
     addNewColumn,
     existingColumns,

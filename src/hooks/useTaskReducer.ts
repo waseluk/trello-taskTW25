@@ -1,8 +1,16 @@
 import { useReducer } from "react";
+import { TaskProps } from "../types/types";
 
-const initialState = {
+
+type TaskState = {
+  tasks: TaskProps[],
+}
+
+const initialState: TaskState = {
   tasks: [],
 };
+
+
 
 const Action = {
   ADD_TASK: "ADD_TASK",
@@ -10,7 +18,7 @@ const Action = {
   EDIT_TASK: "EDIT_TASK",
 };
 
-function reducer(taskState, action) {
+function reducer(taskState: TaskState, action): TaskState {
     switch (action.type) {
       case Action.ADD_TASK:
         return {
@@ -40,9 +48,9 @@ function reducer(taskState, action) {
 const useTaskReducer = () => {
     const [taskState, dispatch] = useReducer(reducer, initialState);
   
-    console.log("Current tasks in useTaskReducer:", taskState.tasks); 
+    //console.log("Current tasks in useTaskReducer:", taskState.tasks); 
   
-    function handleAddTask(title, body) {
+    function handleAddTask(title: string, body: string) {
       const newTask = {
         id: taskState.tasks.length + 1, 
         title,
@@ -60,14 +68,14 @@ const useTaskReducer = () => {
       console.log("Updated tasks after dispatch:", taskState.tasks);
     }
   
-    function handleRemoveTask(taskId) {
+    function handleRemoveTask(taskId: number) {
       dispatch({
         type: Action.REMOVE_TASK,
         taskId,
       });
     }
   
-    function handleEditTask(updatedTask) {
+    function handleEditTask(updatedTask: TaskProps) {
       dispatch({
         type: Action.EDIT_TASK,
         editTask: updatedTask,

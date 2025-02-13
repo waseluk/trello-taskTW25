@@ -1,25 +1,9 @@
-import { useState } from "react";
+import useTaskForm from "../../hooks/useTaskForm";
+import { NewTaskFormProps } from "../../types/types";
 // this was the buggar!! const { handleAddTask } = useTaskReducer();
 
-const NewTaskForm = ({ addNewTask }) => {
-  const [task, setTask] = useState({ title: "", body: "", columnId: 1 });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setTask((prevTask) => ({
-      ...prevTask,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (task.title && task.body) {
-      console.log("Adding task:", task);
-      addNewTask(task.title, task.body, task.columnId);
-      setTask({ title: "", body: "", columnId: 1 });
-    }
-  };
+const NewTaskForm = ({ addNewTask }: NewTaskFormProps) => {
+  const { task, handleChange, handleSubmit } = useTaskForm(addNewTask);
 
   return (
     <form onSubmit={handleSubmit}>

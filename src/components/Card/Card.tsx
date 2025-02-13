@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./card.module.css";
+import { ColumnProps, CardProps } from "../../types/types";
 
 export default function Card({
   id,
@@ -9,7 +10,7 @@ export default function Card({
   body,
   editTask,
   deleteTask,
-}) {
+}: CardProps) {
   const [task, setTask] = useState(body);
   const [isEditing, setIsEditing] = useState(false);
   //columnId dropdown state for moving columns?
@@ -25,8 +26,8 @@ export default function Card({
     setIsEditing(false);
   };
 
-  const handleColumnChange = (e) => {
-    const newColumnId = Number(e.target.value);
+  const handleColumnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newColumnId = Number(event.target.value);
     setSelectedColumn(newColumnId);
     const updatedTask = { id, title, body: task, columnId: newColumnId };
     editTask(updatedTask);
@@ -50,9 +51,9 @@ export default function Card({
       )}
 
       <select value={selectedColumn} onChange={handleColumnChange}>
-        {columns.map((col) => (
-          <option key={col.id} value={col.columnId}>
-            {col.title}
+        {columns.map((column: ColumnProps) => (
+          <option key={column.id} value={column.columnId}>
+            {column.title}
           </option>
         ))}
       </select>
