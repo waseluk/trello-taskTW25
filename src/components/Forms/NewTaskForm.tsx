@@ -1,8 +1,8 @@
-import useTaskForm from "../../hooks/useTaskForm";
-import { NewTaskFormProps } from "../../types/types";
+import useTaskForm from "@hooks/useTaskForm";
+import { TaskProps } from "@/types/types";
 // this was the buggar!! const { handleAddTask } = useTaskReducer();
 
-const NewTaskForm = ({ addNewTask }: NewTaskFormProps) => {
+const NewTaskForm = ({ addNewTask }: TaskProps[]) => {
   const { task, handleChange, handleSubmit } = useTaskForm(addNewTask);
 
   return (

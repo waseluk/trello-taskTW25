@@ -1,12 +1,11 @@
-import { useEffect } from "react";
-import Column from "../Column/Column";
-import NewTaskForm from "../Forms/NewTaskForm";
-import NewColumnForm from "../Forms/NewColumnForm";
-import styles from "./board.module.css";
-import { ColumnProps, TaskProps } from "../../types/types";
+import Column from "@components/Column/Column";
+import NewTaskForm from "@components/Forms/NewTaskForm";
+import NewColumnForm from "@components/Forms/NewColumnForm";
+import styles from "@styles/board.module.css";
+import { ColumnProps, TaskProps } from "@/types/types";
 
-import useTaskReducer from "../../hooks/useTaskReducer";
-import useLocalStorageColumns from "../../hooks/useLocalStorageColumns";
+import useTaskReducer from "@hooks/useTaskReducer";
+import useLocalStorageColumns from "@hooks/useLocalStorageColumns";
 
 const initialColumns: ColumnProps[] = [
   { id: 1, title: "Waiting", columnId: 1 },
@@ -30,14 +29,14 @@ const Board = () => {
     return filteredTasks;
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     //console.log("Updated tasks:", tasks);
-  }, [tasks]);
+  }, [tasks]);*/
   //add column
   const addNewColumn = (newColumn: ColumnProps) => {
     setColumns((prevColumns: ColumnProps[]) => [...prevColumns, newColumn]);
   };
-  console.log(tasks);
+  //console.log(tasks);
   return (
     <div className={styles.board}>
       <NewTaskForm addNewTask={handleAddTask} />

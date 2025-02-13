@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { TaskProps } from "../types/types";
+import { TaskProps } from "@/types/types";
 
 
 type TaskState = {
@@ -58,7 +58,7 @@ const useTaskReducer = () => {
         columnId: 1,  
       };
 
-      console.log("addingtask", newTask);
+      //console.log("addingtask", newTask);
   
       dispatch({
         type: Action.ADD_TASK, 

@@ -1,5 +1,5 @@
-import useColumnForm from "../../hooks/useColumnForm";
-import { NewColumnFormProps } from "../../types/types";
+import useColumnForm from "@/hooks/useColumnForm";
+import { NewColumnFormProps } from "@/types/types";
 
 const NewColumnForm = ({
   addNewColumn,

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from "./card.module.css";
-import { ColumnProps, CardProps } from "../../types/types";
+import styles from "@styles/card.module.css";
+import { ColumnProps, CardProps } from "@/types/types";
 
 export default function Card({
   id,

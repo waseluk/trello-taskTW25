@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NewTaskFormProps } from "../types/types";
+import { NewTaskFormProps } from "@/types/types";
 const useTaskForm = (addNewTask: NewTaskFormProps[]) => {
 const [task, setTask] = useState({ title: "", body: "", columnId: 1 });
 

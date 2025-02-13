@@ -1,6 +1,6 @@
-import styles from "./column.module.css";
-import Card from "../Card/Card";
-import { ColumnProps, TaskProps } from "../../types/types";
+import styles from "@styles/column.module.css";
+import Card from "@components/Card/Card";
+import { ColumnProps, TaskProps } from "@/types/types";
 
 type Column = {
   columns: ColumnProps[];
@@ -17,7 +17,7 @@ const Column = ({
   editTask,
   deleteTask,
 }: Column) => {
-  console.log("Column render, tasks:", tasks);
+  //console.log("Column render tasks:", tasks);
   return (
     <div className={styles.column}>
       <h1>{columnTitle}</h1>

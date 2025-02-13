@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { NewColumnFormProps } from "@/types/types";
 
-const useColumnForm = ({ addNewColumn, existingColumns } ) => {
+const useColumnForm = ({ addNewColumn, existingColumns }: NewColumnFormProps) => {
   const [column, setColumn] = useState({
     id: Date.now(),  
     title: "",
