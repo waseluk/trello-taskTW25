@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Column from "../Column/Column";
 import NewTaskForm from "../Card/NewTaskForm";
 import NewColumnForm from "../Column/NewColumnForm";
@@ -6,15 +6,32 @@ import styles from "./board.module.css";
 
 //import useTasks from "../../hooks/useTasks";
 import useTaskReducer from "../../hooks/useTaskReducer";
+import useLocalStorageColumns from "../../hooks/useLocalStorageColumns";
+
+const initialColumns = [
+  { id: 1, title: "Waiting", columnId: 1 },
+  { id: 2, title: "In Progress", columnId: 2 },
+  { id: 3, title: "Completed", columnId: 3 },
+];
 
 const Board = () => {
   const { tasks, handleAddTask, handleEditTask, handleRemoveTask } =
     useTaskReducer();
-  const [columns, setColumns] = useState([
-    { id: 1, title: "Waiting", columnId: 1 },
-    { id: 2, title: "In Progress", columnId: 2 },
-    { id: 3, title: "Completed", columnId: 3 },
-  ]);
+  const [columns, setColumns] = useLocalStorageColumns(
+    "columns",
+    initialColumns
+  );
+  //const savedColumns = JSON.parse(localStorage.getItem("columns") || "null");
+
+  /*const [columns, setColumns] = useState(() => {
+    return savedColumns && savedColumns.length > 0
+      ? savedColumns
+      : initialColumns;
+  }); 
+  useEffect(() => {
+    localStorage.setItem("columns", JSON.stringify(columns));
+  }, [columns]); */
+
   //this is for singular useTasks
   //const { tasks, addNewTask, editTask, deleteTask } = useTasks();
   //reducer
@@ -30,8 +47,8 @@ const Board = () => {
     console.log("Updated tasks:", tasks);
   }, [tasks]);
   //add column
-  const addNewColumn = (newColumn) => {
-    setColumns((prevColumns) => [...prevColumns, newColumn]);
+  const addNewColumn = (addNewColumn) => {
+    setColumns((prevColumns) => [...prevColumns, addNewColumn]);
   };
   console.log(tasks);
   return (

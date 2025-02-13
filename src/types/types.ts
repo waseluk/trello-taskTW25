@@ -5,8 +5,8 @@ type Card = {
     columnId: number;
 }
 
-type NewCard = {
+type NewTask = {
     id: number;
     title: string;
-    note: string;
+    body: string;
 }
