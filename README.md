@@ -1,11 +1,17 @@
 Trello-task inspired App
+
 A task management app that allows new columns and tasks to be added and organised. This was a timed technical challenge that I had four hours to complete, there was less weight behind the use of styling for this particular project.
 
 Features
+
 Add a new task: New tasks can be created.
+
 Add a new column: New columns for the board can be created.
+
 Edit an existing task: Tasks that are already visible can be edited.
+
 Remove a task: Tasks that are displayed can be removed.
+
 Local storage for columns.
 
 With additional time, I would look to add a feature to remove a column via a button without the need for 'localStorage.removeItem("columns");'
@@ -14,13 +20,13 @@ Additionally, adding persistent state for cards so that will not clear on re-ren
 Tech Stack
 
 Built with Vite
-Frontend: React, Typescript 
-Installation
+
+Frontend:
+React, Typescript 
 
 Prerequisites
-Node.js
-npm or yarn
-[Any other tools needed]
+npm 
+
 Steps to install
 Clone the repository:
 bash
@@ -39,21 +45,20 @@ bash
 Copy
 npm start
 Usage
-Explain how to use your project after it's been installed. This might include a few basic examples or instructions for how to interact with your application.
+
 
 Example:
 
 bash
 Copy
+
 # Start the server
-npm start
-Provide any necessary code snippets or example commands.
+npm run start
+
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Contact
-If people want to reach out to you about your project, you can add contact information here.
-
 Email: example@example.com
 Linkedin: thomas-wasels
 Website: vasselcreative
