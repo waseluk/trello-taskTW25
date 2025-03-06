@@ -1,4 +1,4 @@
-Trello-task inspired App
+# Trello-task inspired App
 
 A task management app that allows new columns and tasks to be added and organised. This was a timed technical challenge that I had four hours to complete, there was less weight behind the use of styling for this particular project.
 
